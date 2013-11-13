@@ -1,0 +1,9 @@
+<!-- Display links for sign_in and sign_up -->
+<% content_for :user_navigation do %>
+    <li class="<%= content_for(:navbar_link) == 'login' ? 'active' : '' %>">
+      <%= link_to 'Connexion', new_user_session_path %>
+      <div class="carret"></div>
+    </li>
+<% end %>
+
+<%= render template: 'layouts/application' %>
