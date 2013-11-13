@@ -20,3 +20,5 @@ end
 if User.where(email:'admin@librarian.fr').blank?
   User.create(email: 'admin@librarian.fr', password: 'password', role_id: Role.find_by_name('admin').id)
 end
+
+Comic.create()
