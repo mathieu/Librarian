@@ -1,9 +1,15 @@
 <!-- Display links for sign_in and sign_up -->
 <% content_for :user_navigation do %>
-    <li class="<%= content_for(:navbar_link) == 'login' ? 'active' : '' %>">
-      <%= link_to 'Connexion', new_user_session_path %>
+    <li class="<%= content_for(:navbar_link) == 'sign_in' ? 'active' : '' %>">
+      <%= link_to 'Sign in', new_user_session_path %>
       <div class="carret"></div>
     </li>
+
+    <li class="<%= content_for(:navbar_link) == 'sign_up' ? 'active' : '' %>">
+      <%= link_to 'Sign up', new_user_registration_path %>
+      <div class="carret"></div>
+    </li>
+
 <% end %>
 
 <%= render template: 'layouts/application' %>
