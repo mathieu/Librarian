@@ -7,6 +7,14 @@ class ApplicationController < ActionController::Base
   # Define the layout
   layout :define_layout
 
+  # Check all strong parameter before calling controller
+  #   - Check the strong parameters for all our controllers. Each controller must have its own 'my_controller'_params method
+  before_filter do
+    # Check Strong parameters for each Controller
+    resource = controller_path.singularize.gsub('/', '_').to_sym
+    method = "#{resource}_params"
+    params[resource] &&= send(method) if respond_to?(method, true)
+  end
 
   private
   def define_layout

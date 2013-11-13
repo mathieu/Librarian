@@ -11,8 +11,8 @@ class Ability
     ##                Rights for ALL                  ##
     ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~##
 
-    ## MODEL : BOOK
-    #can :read, Book
+    ## MODEL : ITEM
+    can :read, Item
 
 
 
@@ -29,8 +29,8 @@ class Ability
     ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~##
     if user.is_admin
 
-      ## MODEL : BOOK
-      #can :create, Book
+      ## MODEL : ITEM
+      can :manage, Item
 
     end
 

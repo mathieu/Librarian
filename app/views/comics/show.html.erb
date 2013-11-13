@@ -1,0 +1,32 @@
+<% content_for :title, @comic.title %>
+<% content_for :navbar_link, 'comics'%>
+
+
+<div class="page-header">
+  <div class="pull-right">
+    <% if can? :edit, @comic %>
+        <%= link_to 'Edit', edit_comic_path(@comic), :class => 'btn btn-success' %>
+    <% end %>
+  </div>
+
+  <h1><%= @comic.title %></h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt>Title : </dt>
+  <dd><%= @comic.title %></dd>
+
+  <dt>Author : </dt>
+  <dd><%= @comic.author %></dd>
+
+  <dt>ISBN : </dt>
+  <dd><%= @comic.isbn%></dd>
+
+  <dt>Registered : </dt>
+  <dd><%= @comic.registered%></dd>
+
+  <dt>Available : </dt>
+  <dd><%= @comic.available%></dd>
+
+</dl>
+

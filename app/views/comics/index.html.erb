@@ -1,0 +1,10 @@
+<% content_for :title, 'All comics' %>
+<% content_for :navbar_link, 'comics'%>
+
+
+<div class="page-header">
+  <h1>Comics</h1>
+</div>
+
+<%= render partial: 'comics/collection', locals: {comics: @comics} %>
+
