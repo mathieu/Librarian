@@ -1,0 +1,2 @@
+class Comic < Item
+end
