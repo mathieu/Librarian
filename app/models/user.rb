@@ -4,4 +4,13 @@ class User < ActiveRecord::Base
   # :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+
+  belongs_to :role
+
+  # Check if user is admin
+  public
+  def is_admin
+    !self.role.nil? && self.role.name == 'admin'
+  end
+
 end
