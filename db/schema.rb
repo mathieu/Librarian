@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131113161440) do
+ActiveRecord::Schema.define(version: 20131113161659) do
 
   create_table "collections", force: true do |t|
     t.string   "title"
@@ -26,9 +26,11 @@ ActiveRecord::Schema.define(version: 20131113161440) do
     t.boolean  "available"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "isbn",       limit: 13
+    t.string   "isbn",          limit: 13
+    t.integer  "collection_id"
   end
 
+  add_index "items", ["collection_id"], name: "index_items_on_collection_id"
   add_index "items", ["isbn"], name: "index_items_on_isbn", unique: true
 
   create_table "roles", force: true do |t|
