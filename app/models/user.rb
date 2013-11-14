@@ -25,6 +25,8 @@ class User < ActiveRecord::Base
 
   belongs_to :role
 
+  has_many :loans
+
   # Assign a default role before creation
   before_create :set_default_role
 

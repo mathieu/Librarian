@@ -18,6 +18,8 @@ class Item < ActiveRecord::Base
 
   belongs_to :collection
 
+  has_many :loans
+
   # Mounter for cover
   mount_uploader :cover, CoverUploader
 end
