@@ -4,3 +4,6 @@ Librarian
 =========
 
 Manage, share a collection of books
+
+master  : [![Build Status](https://travis-ci.org/mathieu/Librarian.png?branch=master)](https://travis-ci.org/mathieu/Librarian)
+develop : [![Build Status](https://travis-ci.org/mathieu/Librarian.png?branch=develop)](https://travis-ci.org/mathieu/Librarian)
