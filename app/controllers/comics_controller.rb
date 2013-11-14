@@ -25,7 +25,6 @@ class ComicsController < ApplicationController
   end
 
   def index
-    @comics = Comic.all
   end
 
   ## UPDATE

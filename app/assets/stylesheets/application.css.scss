@@ -10,3 +10,33 @@
 body {
   padding-top: 90px;
 }
+
+// Pictures
+.no-picture {
+    color: $brand-danger;
+    background-color: $gray-lighter;
+    font-size: 72px;
+    text-align: center;
+    height: 340px;
+    padding-top: 125px;
+  }
+
+.no-picture-small {
+  width: 251px;
+}
+
+.no-picture-medium {
+  width: 400px;
+}
+
+// Thumbnails
+.thumb {
+  .panel {
+    height: 450px;
+    .panel-body {
+      height: 345px;
+      padding: 5px;
+    }
+  }
+
+}

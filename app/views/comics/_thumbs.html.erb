@@ -1,0 +1,24 @@
+<div class="thumb">
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <% if comic.cover? %>
+          <%= image_tag (comic.cover.small.url), :class => 'img-rounded'%>
+      <% else %>
+          <div class="no-picture no-picture-small">
+            <span class="glyphicon glyphicon-ban-circle"></span>
+          </div>
+      <% end %>
+
+      <!-- Comic title -->
+      <h5>
+        <%= link_to comic.title, comic_path(comic) %>
+      </h5>
+
+      <!-- Authors -->
+      <p>
+        <%= comic.author %>
+      </p>
+
+    </div>
+  </div>
+</div>

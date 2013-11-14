@@ -15,7 +15,13 @@
 <div class="row">
   <!-- Display cover -->
   <div class="col-md-4">
-    <%= image_tag (@comic.cover.medium.url), :class => 'img-thumbnail'%>
+    <% if @comic.cover? %>
+        <%= image_tag (@comic.cover.medium.url), :class => 'img-rounded'%>
+    <% else %>
+        <div class="no-picture no-picture-medium">
+          <span class="glyphicon glyphicon-ban-circle"></span>
+        </div>
+    <% end %>
   </div>
 
   <!-- Display info -->
