@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131113161659) do
+ActiveRecord::Schema.define(version: 20131114083904) do
 
   create_table "collections", force: true do |t|
     t.string   "title"
@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 20131113161659) do
     t.datetime "updated_at"
     t.string   "isbn",          limit: 13
     t.integer  "collection_id"
+    t.string   "cover"
   end
 
   add_index "items", ["collection_id"], name: "index_items_on_collection_id"

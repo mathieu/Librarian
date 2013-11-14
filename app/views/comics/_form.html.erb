@@ -9,7 +9,7 @@
     </div>
 <% end %>
 
-<%= form_for @comic, :html => { :class => 'form-horizontal' } do |f| %>
+<%= form_for @comic, :html => {:multipart => true, :class => 'form-horizontal' } do |f| %>
 
     <!-- title -->
     <div class="form-group">
@@ -32,6 +32,20 @@
       <%= f.label :isbn, :class => 'col-md-2 control-label' %>
       <div class="col-md-10">
         <%= f.text_field :isbn, :class => 'form-control' %>
+      </div>
+    </div>
+
+    <!-- cover -->
+    <div class="form-group">
+      <%= f.label :cover, :class => 'col-md-2 control-label' %>
+      <div class="col-md-10">
+        <div class="thumbnail">
+          <%= f.hidden_field :cover_cache %>
+          <%= image_tag (@comic.cover.medium.url), :class => 'img-thumbnail' if @comic.cover? %>
+          <div class="caption">
+            <%= f.file_field :cover %>
+          </div>
+        </div>
       </div>
     </div>
 

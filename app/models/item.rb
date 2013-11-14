@@ -16,4 +16,7 @@
 class Item < ActiveRecord::Base
 
   belongs_to :collection
+
+  # Mounter for cover
+  mount_uploader :cover, CoverUploader
 end

@@ -12,21 +12,33 @@
   <h1><%= @comic.title %></h1>
 </div>
 
-<dl class="dl-horizontal">
-  <dt>Title : </dt>
-  <dd><%= @comic.title %></dd>
+<div class="row">
+  <!-- Display cover -->
+  <div class="col-md-4">
+    <%= image_tag (@comic.cover.medium.url), :class => 'img-thumbnail'%>
+  </div>
 
-  <dt>Author : </dt>
-  <dd><%= @comic.author %></dd>
+  <!-- Display info -->
+  <div class="col-md-8">
+    <dl class="dl-horizontal">
+      <dt>Title : </dt>
+      <dd><%= @comic.title %></dd>
 
-  <dt>ISBN : </dt>
-  <dd><%= @comic.isbn%></dd>
+      <dt>Author : </dt>
+      <dd><%= @comic.author %></dd>
 
-  <dt>Registered : </dt>
-  <dd><%= @comic.registered%></dd>
+      <dt>ISBN : </dt>
+      <dd><%= @comic.isbn%></dd>
 
-  <dt>Available : </dt>
-  <dd><%= @comic.available%></dd>
+      <dt>Registered : </dt>
+      <dd><%= @comic.registered%></dd>
 
-</dl>
+      <dt>Available : </dt>
+      <dd><%= @comic.available%></dd>
+
+    </dl>
+
+  </div>
+</div>
+
 

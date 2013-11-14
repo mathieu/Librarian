@@ -59,6 +59,13 @@ gem 'cancan'
 
 
 
+## File and image manipulation : Carrierwave, MiniMagick
+############################################################################################
+gem 'carrierwave'
+gem 'mini_magick'
+
+
+
 ## Development tools
 ############################################################################################
 group :development do
