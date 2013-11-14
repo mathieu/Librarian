@@ -1,0 +1,11 @@
+ <% comics.each do |comic| %>
+     <% if comic.available? %>
+         <div class="row">
+     <% else %>
+         <div class="row unavailable">
+     <% end %>
+        <%= link_to comic.title =%>, <%= comic.author =%>
+      </div>
+ <% end %>
+
+<%= will_paginate comics %>
