@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131114131200) do
+ActiveRecord::Schema.define(version: 20131114162130) do
 
   create_table "authors", force: true do |t|
     t.string   "name"
@@ -32,7 +32,6 @@ ActiveRecord::Schema.define(version: 20131114131200) do
 
   create_table "items", force: true do |t|
     t.string   "title"
-    t.string   "author"
     t.date     "registered"
     t.boolean  "available"
     t.datetime "created_at"
@@ -40,6 +39,7 @@ ActiveRecord::Schema.define(version: 20131114131200) do
     t.string   "isbn",          limit: 13
     t.integer  "collection_id"
     t.string   "cover"
+    t.string   "author_names"
   end
 
   add_index "items", ["collection_id"], name: "index_items_on_collection_id"

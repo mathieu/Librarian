@@ -1,3 +1,11 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://coffeescript.org/
+$ ->
+  $('.with_autocomplete').autocomplete
+    minLength: 2
+    source: (request, response) ->
+      $.ajax
+        url: $('.with_autocomplete').data('autocompleteurl')
+        dataType: "json"
+        data:
+          name: request.term
+        success: (data) ->
+          response(data)

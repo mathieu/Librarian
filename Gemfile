@@ -42,6 +42,8 @@ gem 'jquery-ui-rails', '~> 4.1.0'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks', '~> 1.3.1'
+gem 'jquery-turbolinks', '~> 2.0.1'
+
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.5.2'
@@ -80,7 +82,7 @@ group :development do
   gem 'better_errors', '~> 1.0.1'
   gem 'binding_of_caller', '~> 0.7.2'
   gem 'meta_request', '~> 0.2.8'
-  gem 'annotate', "~> 2.5.0"
+  gem 'annotate', '~> 2.5.0'
 end
 
 

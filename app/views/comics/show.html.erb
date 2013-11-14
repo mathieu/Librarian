@@ -30,8 +30,12 @@
       <dt>Title : </dt>
       <dd><%= @comic.title %></dd>
 
-      <dt>Author : </dt>
-      <dd><%= @comic.author %></dd>
+      <dt>Authors : </dt>
+      <dd>
+        <% @comic.authors.each do |author| %>
+            <%= author.name %>,
+        <% end %>
+      </dd>
 
       <dt>ISBN : </dt>
       <dd><%= @comic.isbn%></dd>
