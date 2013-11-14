@@ -32,9 +32,7 @@
 
       <dt>Authors : </dt>
       <dd>
-        <% @comic.authors.each do |author| %>
-            <%= author.name %>,
-        <% end %>
+        <%= display_authors(@comic.authors)%>
       </dd>
 
       <dt>ISBN : </dt>
