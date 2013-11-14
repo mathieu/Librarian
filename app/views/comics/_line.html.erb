@@ -1,0 +1,13 @@
+<% if comic.available? %>
+    <div>
+<% else %>
+    <div class="unavailable">
+<% end %>
+<% if comic.cover? %>
+    <%= image_tag (comic.cover.mini.url)%>          </br>
+<% else %>
+    <div class="no-picture  no-picture-mini">
+      <span class="glyphicon glyphicon-question-sign"></span>
+    </div>
+<% end %> <%= link_to comic.title, comic =%>, <%= comic.author =%>
+    </div>
