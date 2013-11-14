@@ -21,6 +21,13 @@ body {
     padding-top: 125px;
   }
 
+.no-picture-mini {
+  font-size: 20px;
+  width: 39px;
+  height: 51px;
+  padding-top: 12px;
+}
+
 .no-picture-small {
   width: 251px;
 }
@@ -45,5 +52,5 @@ body {
 
 .unavailable {
   opacity: 0.2;
-  margin-bottom: -200px;
+  //margin-bottom: -200px;
 }
