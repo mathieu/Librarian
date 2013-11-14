@@ -2,7 +2,8 @@
 <% content_for :navbar_link, 'comics'%>
 
 
-<div class="page-header">
+
+<div class="page-title">
   <h1>
     <% if can? :create, Comic %>
         <div class="pull-right">
@@ -10,8 +11,11 @@
         </div>
     <% end %>
     Comics
+    <%= link_to '', comics_path(:display => 'list'), :class => 'btn glyphicon glyphicon-list' %>
+    <%= link_to '', comics_path(:display => 'grid'), :class => 'btn glyphicon glyphicon-th' %>
   </h1>
+
 </div>
 
-<%= render partial: 'comics/grid', locals: {comics: Comic.all.paginate(:page => params[:page])} %>
+<%= render partial: "comics/#{params[:display]?params[:display]:'grid'}", locals: {comics: Comic.all.paginate(:page => params[:page])} %>
 
