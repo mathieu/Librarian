@@ -68,7 +68,7 @@ gem 'mini_magick', '~> 3.6.0'
 
 ## Tools : will_paginate
 ############################################################################################
-gem 'will_paginate', '~> 3.0'
+gem 'will_paginate', '~> 3.0.5'
 
 
 ## Development tools
