@@ -9,16 +9,7 @@ class ComicsController < ApplicationController
 
   def create
     # Treat author
-    authors_as_array = params[:comic][:author_names].gsub(/\s+/, "").split(";")
-    authors_as_array.each do |author_name|
-      author = Author.find_by_name(author_name)
-      if author.blank?
-        author = Author.create(name: author_name).save
-      end
-      unless @comic.authors.include?(author)
-        @comic.authors << author
-      end
-    end
+    add_autors
 
     # Set the registered date & and the availability
     @comic.registered = DateTime.now
@@ -46,16 +37,7 @@ class ComicsController < ApplicationController
 
   def update
     # Treat author
-    authors_as_array = params[:comic][:author_names].gsub(/\s+/, "").split(";")
-    authors_as_array.each do |author_name|
-      author = Author.find_by_name(author_name)
-      if author.blank?
-        author = Author.create(name: author_name).save
-      end
-      unless @comic.authors.include?(author)
-        @comic.authors << author
-      end
-    end
+    add_autors
 
     if @comic.update_attributes(params[:comic])
       flash[:notice] = 'Successfully updated comic.'
@@ -74,6 +56,22 @@ class ComicsController < ApplicationController
       { value: a.name }
     end
     render json: result
+  end
+
+  private
+  def add_autors
+    authors_as_str = params[:comic][:author_names].strip.end_with?(',') ? params[:comic][:author_names].strip[0..-2] : params[:comic][:author_names]
+    authors_as_array = authors_as_str.split(",")
+    authors_as_array.each do |author_name|
+      author = Author.find_by_name(author_name.strip)
+      if author.blank?
+        author = Author.create(name: author_name.strip)
+        author.save
+      end
+      unless @comic.authors.include?(author)
+        @comic.authors << author
+      end
+    end
   end
 
   ## Strong parameters
