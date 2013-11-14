@@ -17,8 +17,8 @@
 class Item < ActiveRecord::Base
 
   belongs_to :collection
-
   has_many :loans
+  has_and_belongs_to_many :authors
 
   # Mounter for cover
   mount_uploader :cover, CoverUploader
