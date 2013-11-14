@@ -14,4 +14,4 @@
   Our comics' collection
 </h3>
 
-<%= render partial: 'comics/grid', locals: {comics: Comic.all} %>
+<%= render partial: 'comics/grid', locals: {comics: Comic.all.paginate(:page => params[:page])} %>

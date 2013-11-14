@@ -13,5 +13,5 @@
   </h1>
 </div>
 
-<%= render partial: 'comics/grid', locals: {comics: Comic.all} %>
+<%= render partial: 'comics/grid', locals: {comics: Comic.all.paginate(:page => params[:page])} %>
 
