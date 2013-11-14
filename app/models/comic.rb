@@ -11,6 +11,7 @@
 #  updated_at    :datetime
 #  isbn          :string(13)
 #  collection_id :integer
+#  cover         :string(255)
 #
 
 class Comic < Item
