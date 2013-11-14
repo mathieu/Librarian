@@ -42,18 +42,18 @@ end
 
 
 if Comic.where(isbn:'9782723463409').blank?
-  Comic.create( title:'Les Gouttes de Dieu 1', author:'Tadashi AGI & Shu OKIMOTO', isbn: '9782723463409',
+  Comic.create( title:'Les Gouttes de Dieu 1', isbn: '9782723463409',
                 registered:'2012/05/13', available: true, collection_id: Collection.find_by_title('Les Gouttes de Dieu').id)
 end
 
 
 if Comic.where(isbn:'9784063724356').blank?
-  Comic.create( title:'Les Gouttes de Dieu 2', author:'Tadashi AGI & Shu OKIMOTO', isbn: '9784063724356',
+  Comic.create( title:'Les Gouttes de Dieu 2', isbn: '9784063724356',
                 registered:'2012/05/13', available: true, collection_id: Collection.find_by_title('Les Gouttes de Dieu').id)
 end
 
 if Comic.where(isbn:'9782858151257').blank?
-  Comic.create( title:'Soeur Marie-Thérèse des Batignoles', author:'Maëster', isbn: '9782858151257',
+  Comic.create( title:'Soeur Marie-Thérèse des Batignoles', isbn: '9782858151257',
                 registered:'2011/04/13', available: true)
 end
 
