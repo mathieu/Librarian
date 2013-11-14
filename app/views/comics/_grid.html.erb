@@ -1,0 +1,11 @@
+<% comics.each_slice(4).to_a.each do |comics| %>
+    <div class="row">
+
+      <% comics.each do |comic| %>
+          <div class="col-md-3">
+            <%= render partial: 'comics/thumbs', locals: {comic: comic} %>
+          </div>
+      <% end %>
+
+    </div>
+<% end %>

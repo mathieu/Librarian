@@ -59,6 +59,13 @@ gem 'cancan'
 
 
 
+## File and image manipulation : Carrierwave, MiniMagick
+############################################################################################
+gem 'carrierwave'
+gem 'mini_magick'
+
+
+
 ## Development tools
 ############################################################################################
 group :development do
@@ -78,3 +85,5 @@ group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
 end
+
+gem 'annotate', ">=2.5.0"

@@ -1,0 +1,17 @@
+<% content_for :title, 'All comics' %>
+<% content_for :navbar_link, 'comics'%>
+
+
+<div class="page-header">
+  <h1>
+    <% if can? :create, Comic %>
+        <div class="pull-right">
+          <%= link_to 'New comic', new_comic_path, :class => 'btn btn-success'%>
+        </div>
+    <% end %>
+    Comics
+  </h1>
+</div>
+
+<%= render partial: 'comics/grid', locals: {comics: Comic.all} %>
+

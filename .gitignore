@@ -20,3 +20,9 @@
 
 # Ignore generated Gemfile.lock
 Gemfile.lock
+
+# Ignore Mac files
+.DS_Store
+
+# Ignore uploaded images
+public/uploads/

@@ -1,14 +1,14 @@
 # == Schema Information
 #
-# Table name: roles
+# Table name: collections
 #
 #  id         :integer          not null, primary key
-#  name       :string(255)
+#  title      :string(255)
 #  created_at :datetime
 #  updated_at :datetime
 #
 
-class Role < ActiveRecord::Base
+class Collection < ActiveRecord::Base
 
-  has_many :users
+  has_many :items
 end

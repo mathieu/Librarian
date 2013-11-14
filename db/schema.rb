@@ -11,7 +11,39 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131113135716) do
+ActiveRecord::Schema.define(version: 20131114092408) do
+
+  create_table "collections", force: true do |t|
+    t.string   "title"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "items", force: true do |t|
+    t.string   "title"
+    t.string   "author"
+    t.date     "registered"
+    t.boolean  "available"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "isbn",          limit: 13
+    t.integer  "collection_id"
+    t.string   "cover"
+  end
+
+  add_index "items", ["collection_id"], name: "index_items_on_collection_id"
+  add_index "items", ["isbn"], name: "index_items_on_isbn", unique: true
+
+  create_table "loans", force: true do |t|
+    t.integer  "user_id"
+    t.boolean  "returned"
+    t.integer  "item_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "loans", ["item_id"], name: "index_loans_on_item_id"
+  add_index "loans", ["user_id"], name: "index_loans_on_user_id"
 
   create_table "roles", force: true do |t|
     t.string   "name"

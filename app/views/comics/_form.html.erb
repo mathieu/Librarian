@@ -1,0 +1,58 @@
+<% if @comic.errors.any? %>
+    <div class="alert alert-danger">
+      <b><%= pluralize(@comic.errors.count, 'error') %>:</b>
+      <ul>
+        <% @comic.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+<% end %>
+
+<%= form_for @comic, :html => {:multipart => true, :class => 'form-horizontal' } do |f| %>
+
+    <!-- title -->
+    <div class="form-group">
+      <%= f.label :title, :class => 'col-md-2 control-label' %>
+      <div class="col-md-10">
+        <%= f.text_field :title, :class => 'form-control' %>
+      </div>
+    </div>
+
+    <!-- author -->
+    <div class="form-group">
+      <%= f.label :author, :class => 'col-md-2 control-label' %>
+      <div class="col-md-10">
+        <%= f.text_field :author, :class => 'form-control' %>
+      </div>
+    </div>
+
+    <!-- isbn -->
+    <div class="form-group">
+      <%= f.label :isbn, :class => 'col-md-2 control-label' %>
+      <div class="col-md-10">
+        <%= f.text_field :isbn, :class => 'form-control' %>
+      </div>
+    </div>
+
+    <!-- cover -->
+    <div class="form-group">
+      <%= f.label :cover, :class => 'col-md-2 control-label' %>
+      <div class="col-md-10">
+        <div class="thumbnail">
+          <%= f.hidden_field :cover_cache %>
+          <%= image_tag (@comic.cover.medium.url), :class => 'img-thumbnail' if @comic.cover? %>
+          <div class="caption">
+            <%= f.file_field :cover %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-md-offset-2 col-md-10">
+        <%= link_to 'Annuler', root_path, :class => 'btn btn-default' %>
+        <%= f.submit nil, :class => 'btn btn-primary' %>
+      </div>
+    </div>
+<% end %>
