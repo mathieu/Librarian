@@ -44,7 +44,7 @@ class ComicsController < ApplicationController
   ## Strong parameters
   ############################
   def comic_params
-    params.require(:comic).permit(:title, :author, :isbn, :cover  )
+    params.require(:comic).permit(:title, :author, :isbn, :cover, :cover_cache, :available  )
   end
 
 end
