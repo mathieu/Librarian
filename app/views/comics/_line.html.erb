@@ -1,6 +1,6 @@
 <div class="col-md-6">
   <div class="row">
-  <div class="<%= comic.available? ? 'col-md-2' : 'col-md-1 unavailable' %>">
+  <div class="<%= comic.available? ? 'col-md-1' : 'col-md-1 unavailable' %>">
     <% if comic.cover? %>
         <%= image_tag (comic.cover.mini.url)%>
     <% else %>
@@ -11,7 +11,7 @@
 
   </div>
 
-    <div class="col-md-10">
+    <div class="col-md-11">
       <%= link_to comic.title, comic %> <br/>
       <%= display_authors(comic.authors) %>
     </div>
