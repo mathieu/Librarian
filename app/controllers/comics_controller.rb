@@ -60,6 +60,7 @@ class ComicsController < ApplicationController
 
   private
   def add_autors
+    @comic.authors = []
     authors_as_str = params[:comic][:author_names].strip.end_with?(',') ? params[:comic][:author_names].strip[0..-2] : params[:comic][:author_names]
     authors_as_array = authors_as_str.split(",")
     authors_as_array.each do |author_name|
@@ -68,9 +69,9 @@ class ComicsController < ApplicationController
         author = Author.create(name: author_name.strip)
         author.save
       end
-      unless @comic.authors.include?(author)
-        @comic.authors << author
-      end
+
+      @comic.authors << author
+
     end
   end
 
