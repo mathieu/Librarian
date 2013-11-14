@@ -4,7 +4,9 @@ Librarian::Application.routes.draw do
   devise_for :users
 
   # Comic
-  resources :comics
+  resources :comics do
+    get :autocomplete_author_name, :on => :collection
+  end
 
   # Root of the application => /
   root 'index#index'
