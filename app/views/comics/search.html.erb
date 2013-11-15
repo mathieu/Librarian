@@ -12,5 +12,5 @@
 <% if @result.results.size == 0 %>
     No comic found
 <% else %>
-    <%= render partial: 'comics/grid', as: :comic, locals: {comics: @result.results} %>
+    <%= render partial: 'comics/grid', as: :comic, locals: {comics: @result.results, paginate: false} %>
 <% end %>
