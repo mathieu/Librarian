@@ -24,9 +24,9 @@
       <% if can? :create, Loan %>
         <div class="pull-right">
           <% if comic.available %>
-            <%= link_to 'New Loan', new_loan_path(:item => comic), :class => 'btn btn-success'%>
+            <%= link_to t('NewLoan'), new_loan_path(:item => comic), :class => 'btn btn-success'%>
           <% else %>
-            <%= link_to 'Return',loan_path(comic.loans.where(returned: false).first!), :class => 'btn btn-success', :method => :put%>
+            <%= link_to t('Return'),loan_path(comic.loans.where(returned: false).first!), :class => 'btn btn-success', :method => :put%>
           <% end %>
         </div>
       <% end %>
