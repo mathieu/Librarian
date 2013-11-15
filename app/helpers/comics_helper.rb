@@ -1,5 +1,10 @@
 module ComicsHelper
   def display_authors(authors)
+
+    if authors.nil?
+      return ''
+    end
+
     name =''
     authors.each do |author|
       name += author.name + ', '
