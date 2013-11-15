@@ -18,7 +18,7 @@
 
       <!-- Authors -->
       <p>
-        <%= display_authors(comic.authors) %>
+        <%= comic.author_names %>
       </p>
 
       <% if can? :create, Loan %>
