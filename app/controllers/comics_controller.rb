@@ -51,7 +51,7 @@ class ComicsController < ApplicationController
 
     search_str = params[:query]
 
-    @result = Tire.search 'comics' do
+    @result = Comic.search :load => {:include => 'authors'} do
       query do
         boolean do
           must   { string search_str }

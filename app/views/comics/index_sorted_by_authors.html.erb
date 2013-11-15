@@ -26,7 +26,7 @@
             <h5><%= author.name %></h5>
           </div>
           <div class="panel-body">
-            <%= render partial: "comics/#{params[:display]?params[:display]:'grid'}", locals: {comics: author.comics.paginate(:page => params[:page])} %>
+            <%= render partial: "comics/#{params[:display]?params[:display]:'grid'}", locals: {comics: author.comics.paginate(:page => params[:page]), paginate:true} %>
           </div>
         </div>
     <% end %>
