@@ -29,6 +29,18 @@ class LoansController < ApplicationController
     end
   end
 
+  def update 
+    @loan.returned = true
+    @loan.item.available = true
+    if @loan.save and @loan.item.save 
+      flash[:notice] = 'Successfully returned loan.'
+      redirect_to loans_url
+    else
+      flash[:error] = 'Error while returning loan.'
+      render 'new'
+    end
+  end
+
   ## Strong parameters
   ############################
   def loan_params
