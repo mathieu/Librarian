@@ -1,5 +1,5 @@
 class ComicsController < ApplicationController
-  before_filter :authenticate_user!, :except => [:show, :index]
+  before_filter :authenticate_user!, :except => [:show, :index, :search]
   load_and_authorize_resource
 
   ## CREATE
@@ -47,6 +47,22 @@ class ComicsController < ApplicationController
     end
   end
 
+  def search
+
+    search_str = params[:query]
+
+    @result = Tire.search 'comics' do
+      query do
+        boolean do
+          must   { string search_str }
+        end
+      end
+    end
+
+
+  end
+
+
   ## UPDATE
   ############################
   def edit
@@ -63,6 +79,11 @@ class ComicsController < ApplicationController
       render 'edit'
     end
   end
+
+
+
+
+  private
 
 
   ## Utils
@@ -92,6 +113,8 @@ class ComicsController < ApplicationController
     end
   end
 
+  private
+  
   ## Strong parameters
   ############################
   def comic_params
