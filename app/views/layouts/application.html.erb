@@ -33,7 +33,7 @@
 
       <% if current_user and current_user.role.name == 'admin' %>
         <ul class="nav navbar-nav">
-          <li><%= link_to 'Loans', loans_path %></li>
+          <li><%= link_to t('Loans'), loans_path %></li>
         </ul>
       <% end %>
       <ul class="nav navbar-nav navbar-left">
@@ -42,10 +42,10 @@
 
       <%= form_tag search_comics_url, method: :get, :class => 'navbar-form navbar-right', :role => 'search' do %>
           <div class="form-group">
-            <label class="sr-only">Search</label>
-            <%= text_field_tag :query, params[:query], :class => 'form-control', :placeholder => 'Search' %>
+            <label class="sr-only"><%= t('search') %></label>
+            <%= text_field_tag :query, params[:query], :class => 'form-control', :placeholder => t('search', :default => "Seeeearch") %>
           </div>
-          <%= submit_tag 'Search', name: nil, :class => 'btn btn-default' %>
+          <%= submit_tag t('search', :default => "Search") , name: nil, :class => 'btn btn-default' %>
       <% end %>
 
     </div>

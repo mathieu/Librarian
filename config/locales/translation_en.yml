@@ -1,0 +1,69 @@
+en:
+
+  search: Search
+  NewComic: New Comic
+  Comics: Comics
+
+
+  activerecord:
+    models:
+      author: author  #g
+      collection: collection  #g
+      comic: comic  #g
+      item: item  #g
+      loan: loan  #g
+      role: role  #g
+      user: user  #g
+
+    attributes:
+      author:
+        items: items  #g
+        name: name  #g
+
+      collection:
+        items: items  #g
+        title: title  #g
+
+      comic:
+        author_names: author_names  #g
+        authors: authors  #g
+        available: available  #g
+        collection: :activerecord.models.collection  #g
+        cover: cover  #g
+        isbn: isbn  #g
+        loans: loans  #g
+        registered: registered  #g
+        title: title  #g
+
+      item:
+        author_names: author_names  #g
+        authors: authors  #g
+        available: available  #g
+        collection: :activerecord.models.collection  #g
+        cover: cover  #g
+        isbn: isbn  #g
+        loans: loans  #g
+        registered: registered  #g
+        title: title  #g
+
+      loan:
+        item: :activerecord.models.item  #g
+        returned: returned  #g
+        user: :activerecord.models.user  #g
+
+      role:
+        name: name  #g
+        users: users  #g
+
+      user:
+        current_sign_in_at: current_sign_in_at  #g
+        current_sign_in_ip: current_sign_in_ip  #g
+        email: email  #g
+        encrypted_password: encrypted_password  #g
+        last_sign_in_at: last_sign_in_at  #g
+        last_sign_in_ip: last_sign_in_ip  #g
+        loans: loans  #g
+        remember_created_at: remember_created_at  #g
+        reset_password_sent_at: reset_password_sent_at  #g
+        reset_password_token: reset_password_token  #g
+        role: :activerecord.models.role  #g

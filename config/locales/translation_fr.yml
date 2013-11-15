@@ -1,0 +1,89 @@
+fr:
+
+  Title: Titre
+  Titles: Titres
+
+  Author: Auteur
+  Authors: Auteurs
+
+  Collection: Série
+  Collections: Séries
+
+  NewComic: Nouvelle BD
+
+  Comics: BDs
+
+  NewLoan: Nouvel emprunt
+  Return: Retour
+  Loan: Emprunt
+  Loans: Emprunts
+
+  User: Utilisateur
+
+  Registered: Enregistré
+  Available: Disponible
+  password: Mot de passe
+  search: Chercher
+
+  activerecord:
+    models:
+      author: auteur
+      collection: collection  #g
+      comic: bd
+      item: item  #g
+      loan: emprunt
+      role: role  #g
+      user: utilisateur
+
+    attributes:
+      author:
+        items: items  #g
+        name: nom
+
+      collection:
+        items: items  #g
+        title: titre
+
+      comic:
+        author_names: author_names  #g
+        authors: auteurs
+        available: disponible
+        collection: collection
+        cover: couverture
+        isbn: isbn  #g
+        loans: emprunts
+        registered: enregistré
+        title: titre
+
+      item:
+        author_names: author_names  #g
+        authors: auteurs  #g
+        available: disponible  #g
+        collection: collection  #g
+        cover: couverture
+        isbn: isbn  #g
+        loans: emprunts
+        registered: enregistré
+        title: titre
+
+      loan:
+        item: :activerecord.models.item  #g
+        returned: rendu
+        user: utilisateur
+
+      role:
+        name: nom
+        users: utlisateurs
+
+      user:
+        current_sign_in_at: current_sign_in_at  #g
+        current_sign_in_ip: current_sign_in_ip  #g
+        email: email  #g
+        encrypted_password: encrypted_password  #g
+        last_sign_in_at: last_sign_in_at  #g
+        last_sign_in_ip: last_sign_in_ip  #g
+        loans: emprunts
+        remember_created_at: remember_created_at  #g
+        reset_password_sent_at: reset_password_sent_at  #g
+        reset_password_token: reset_password_token  #g
+        role: :activerecord.models.role  #g

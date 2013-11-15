@@ -91,6 +91,8 @@ group :development do
   gem 'binding_of_caller', '~> 0.7.2'
   gem 'meta_request', '~> 0.2.8'
   gem 'annotate', '~> 2.5.0'
+  gem 'i18n_generators'
+  gem 'devise-i18n-views'
 end
 
 

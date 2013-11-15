@@ -27,10 +27,10 @@
   <!-- Display info -->
   <div class="col-md-8">
     <dl class="dl-horizontal">
-      <dt>Title : </dt>
+      <dt><%= t :Title%> : </dt>
       <dd><%= @comic.title %></dd>
 
-      <dt>Authors : </dt>
+      <dt><%=t :Authors %> : </dt>
       <dd>
         <%= display_authors(@comic.authors)%>
       </dd>
@@ -38,10 +38,10 @@
       <dt>ISBN : </dt>
       <dd><%= @comic.isbn%></dd>
 
-      <dt>Registered : </dt>
+      <dt><%= t :Registered %> : </dt>
       <dd><%= @comic.registered%></dd>
 
-      <dt>Available : </dt>
+      <dt><%= t :Available %> : </dt>
       <dd><%= @comic.available%></dd>
 
     </dl>
