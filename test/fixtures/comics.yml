@@ -17,6 +17,7 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 lgdd1:
+  type: Comic
   title: Les Gouttes de Dieu 1
   authors: agi, shu
   isbn: 9782723463409
@@ -25,6 +26,7 @@ lgdd1:
   available: false
 
 lgdd2:
+  type: Comic
   title: Les Gouttes de Dieu 2
   authors: agi, shu
   isbn: 9784063724356
@@ -33,9 +35,9 @@ lgdd2:
   available: true
 
 smtdb:
+  type: Comic
   title: Soeur Marie-Thérèse des Batignoles
   authors: maester
   isbn: 9782858151257
-  collection: lgdd
   registered: 2011-11-13
   available: true
