@@ -1,0 +1,24 @@
+<% content_for :title, 'Add new loan' %>
+<% content_for :navbar_link, 'loans'%>
+
+
+<div class="page-header">
+  <h1>Add a new loan for <%= @loan.item.title %> </h1>
+</div>
+
+<%= form_for @loan, :html => {:class => 'form-horizontal' } do |f| %>
+
+	<%= f.hidden_field :item_id %>
+
+	<% users_array = User.all.map { |user| [user.email, user.id] } %>
+
+	<%= f.select(:user_id, users_array) %>
+
+	<div class="form-group">
+	  <div class="col-md-offset-2 col-md-10">
+	    <%= link_to 'Annuler', root_path, :class => 'btn btn-default' %>
+	    <%= f.submit nil, :class => 'btn btn-primary' %>
+	  </div>
+	</div>
+
+<% end %>
