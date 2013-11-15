@@ -1,7 +1,7 @@
 <div class="thumb">
   <div class="panel panel-default">
 
-    <div class="<%= comic.available? ? 'panel-body' : 'panel-body unavailable' %>">
+    <div class="<%= comic.available ? 'panel-body' : 'panel-body unavailable' %>">
 
       <% if comic.cover? %>
           <%= image_tag (comic.cover.small.url), :class => 'img-rounded'%>
