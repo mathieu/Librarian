@@ -40,17 +40,13 @@
         <%= yield :user_navigation %>
       </ul>
 
-
-      <ul class="nav navbar-nav navbar-right">
-        <li>
-          <%= form_tag search_comics_url, method: :get do %>
-              <p>
-                <%= text_field_tag :query, params[:query], :class => 'search' %>
-                <%= submit_tag 'Search', name: nil, :class => 'button' %>
-              </p>
-          <% end %>
-        </li>
-      </ul>
+      <%= form_tag search_comics_url, method: :get, :class => 'navbar-form navbar-right', :role => 'search' do %>
+          <div class="form-group">
+            <label class="sr-only">Search</label>
+            <%= text_field_tag :query, params[:query], :class => 'form-control', :placeholder => 'Search' %>
+          </div>
+          <%= submit_tag 'Search', name: nil, :class => 'btn btn-default' %>
+      <% end %>
 
     </div>
   </div>
