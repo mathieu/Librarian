@@ -1,7 +1,41 @@
+# == Schema Information
+#
+# Table name: items
+#
+#  id            :integer          not null, primary key
+#  title         :string(255)
+#  registered    :date
+#  available     :boolean
+#  created_at    :datetime
+#  updated_at    :datetime
+#  isbn          :string(13)
+#  collection_id :integer
+#  cover         :string(255)
+#  author_names  :string(255)
+#
+
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
-one:
-  isbn: MyString
+lgdd1:
+  title: Les Gouttes de Dieu 1
+  authors: agi, shu
+  isbn: 9782723463409
+  collection: lgdd
+  registered: 2010-11-12
+  available: false
 
-two:
-  isbn: MyString
+lgdd2:
+  title: Les Gouttes de Dieu 2
+  authors: agi, shu
+  isbn: 9784063724356
+  collection: lgdd
+  registered: 2010-11-13
+  available: true
+
+smtdb:
+  title: Soeur Marie-Thérèse des Batignoles
+  authors: maester
+  isbn: 9782858151257
+  collection: lgdd
+  registered: 2011-11-13
+  available: true
