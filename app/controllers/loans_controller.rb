@@ -29,6 +29,10 @@ class LoansController < ApplicationController
     end
   end
 
+  def edit
+    update
+  end
+
   def update 
     @loan.returned = true
     @loan.item.available = true

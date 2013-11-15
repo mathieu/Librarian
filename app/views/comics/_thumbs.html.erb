@@ -26,7 +26,7 @@
           <% if comic.available %>
             <%= link_to 'New Loan', new_loan_path(:item => comic), :class => 'btn btn-success'%>
           <% else %>
-            <%= link_to 'Return', update_loan_path(:item => comic), :class => 'btn btn-success'%>
+            <%= link_to 'Return', edit_loan_path(comic.loans.where(returned: false).first!), :class => 'btn btn-success'%>
           <% end %>
         </div>
       <% end %>
