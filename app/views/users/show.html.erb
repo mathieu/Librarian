@@ -1,0 +1,51 @@
+<% content_for :title, @user.email%>
+<% content_for :navbar_link, 'my_profile'%>
+
+
+<div class="page-header">
+  <div class="pull-right">
+    <% if can? :edit, @user %>
+        <%= link_to 'Edit', edit_user_registration_path, :class => 'btn btn-success' %>
+    <% end %>
+  </div>
+
+  <h1><%= @user.email%></h1>
+</div>
+
+<div class="row">
+
+  <h3>Loans' list</h3>
+
+  <table class="table table-striped">
+    <thead>
+        <tr>
+          <th>Date</th>
+          <th>Return date</th>
+          <th>Title</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <% @user.loans.each do |loan| %>
+        <tr>
+          <td><%=l loan.created_at, format: :usual_date%></td>
+          <td>
+            <% if loan.returned %>
+                <%= loan.updated_at %>
+            <% else %>
+                Not given
+          <% end %>
+
+          </td>
+          <td>
+            <%= loan.item.title %>
+          </td>
+        </tr>
+        <% end %>
+    </tbody>
+  </table>
+
+
+</div>
+
+

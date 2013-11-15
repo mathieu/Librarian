@@ -19,11 +19,11 @@
       </div>
     </div>
 
-    <!-- author -->
-    <div class="form-group">
-      <%= f.label :author, :class => 'col-md-2 control-label' %>
-      <div class="col-md-10">
-        <%= f.text_field :author, :class => 'form-control' %>
+    <!-- authors -->
+    <div class="form-group" data-no-turbolink>
+      <%= f.label :authors, :class => 'col-md-2 control-label' %>
+      <div class="col-md-10" data-no-turbolink>
+        <%= f.text_field :author_names, :class => 'form-control with_autocomplete', 'data-autocompleteUrl' => autocomplete_author_name_comics_path %>
       </div>
     </div>
 
@@ -47,6 +47,18 @@
           </div>
         </div>
       </div>
+    </div>
+
+
+    <!-- available -->
+    <div class="form-group">
+      <%= f.label :available, :class => 'col-md-2 control-label' %>
+      <div class="col-md-10">
+        <label>
+          <%= f.check_box :available, :class => 'form-control' %>
+        </label>
+      </div>
+
     </div>
 
     <div class="form-group">

@@ -13,6 +13,8 @@ class Ability
 
     ## MODEL : ITEM
     can :read, Item
+    can :search, Item
+
 
 
 
@@ -21,6 +23,14 @@ class Ability
     ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~##
     if user.role
 
+      ## MODEL : USER
+      can :edit, User do |asked_user|
+        user == asked_user
+      end
+
+      can :read, User do |asked_user|
+        user == asked_user
+      end
     end
 
 
@@ -32,6 +42,8 @@ class Ability
       ## MODEL : ITEM
       can :manage, Item
 
+      ## MODEL : LOAN
+      can :manage, Loan
     end
 
 

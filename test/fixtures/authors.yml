@@ -1,0 +1,18 @@
+# == Schema Information
+#
+# Table name: authors
+#
+#  id         :integer          not null, primary key
+#  name       :string(255)
+#  created_at :datetime
+#  updated_at :datetime
+#
+
+agi:
+  name: Tadashi AGI
+
+shu:
+  name: Shu OKIMOTO
+
+maester:
+  name: Maëster	

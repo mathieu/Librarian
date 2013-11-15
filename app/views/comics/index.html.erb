@@ -2,16 +2,10 @@
 <% content_for :navbar_link, 'comics'%>
 
 
-<div class="page-header">
-  <h1>
-    <% if can? :create, Comic %>
-        <div class="pull-right">
-          <%= link_to 'New comic', new_comic_path, :class => 'btn btn-success'%>
-        </div>
-    <% end %>
-    Comics
-  </h1>
-</div>
+<%= render partial: 'index_header' %>
 
-<%= render partial: 'comics/grid', locals: {comics: Comic.all} %>
+
+<%= render partial: 'index_nav', locals: {active_link: 'titles'} %>
+
+<%= render partial: "comics/#{params[:display]?params[:display]:'grid'}", locals: {comics: Comic.all.paginate(:page => params[:page]), paginate:true} %>
 

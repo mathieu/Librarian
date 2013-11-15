@@ -19,7 +19,7 @@
         <%= image_tag (@comic.cover.medium.url), :class => 'img-rounded'%>
     <% else %>
         <div class="no-picture no-picture-medium">
-          <span class="glyphicon glyphicon-ban-circle"></span>
+          <span class="glyphicon glyphicon-question-sign"></span>
         </div>
     <% end %>
   </div>
@@ -27,19 +27,21 @@
   <!-- Display info -->
   <div class="col-md-8">
     <dl class="dl-horizontal">
-      <dt>Title : </dt>
+      <dt><%= t :Title%> : </dt>
       <dd><%= @comic.title %></dd>
 
-      <dt>Author : </dt>
-      <dd><%= @comic.author %></dd>
+      <dt><%=t :Authors %> : </dt>
+      <dd>
+        <%= display_authors(@comic.authors)%>
+      </dd>
 
       <dt>ISBN : </dt>
       <dd><%= @comic.isbn%></dd>
 
-      <dt>Registered : </dt>
+      <dt><%= t :Registered %> : </dt>
       <dd><%= @comic.registered%></dd>
 
-      <dt>Available : </dt>
+      <dt><%= t :Available %> : </dt>
       <dd><%= @comic.available%></dd>
 
     </dl>

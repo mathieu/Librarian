@@ -4,14 +4,4 @@
   </h1>
 </div>
 
-<h3>
-  <% if can? :create, Comic %>
-      <div class="pull-right">
-        <%= link_to 'New comic', new_comic_path, :class => 'btn btn-success'%>
-      </div>
-  <% end %>
-
-  Our comics' collection
-</h3>
-
-<%= render partial: 'comics/grid', locals: {comics: Comic.all} %>
+<%= render file: 'comics/index', locals: {comics: Comic.all.paginate(:page => params[:page])} %>

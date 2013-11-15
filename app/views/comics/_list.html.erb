@@ -1,0 +1,7 @@
+<% comics.each do |comic| %>
+    <div class="row">
+        <%= render partial: 'comics/line', locals: {comic: comic} %>
+    </div>
+<% end %>
+
+<%= will_paginate comics %>

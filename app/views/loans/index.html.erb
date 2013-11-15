@@ -1,0 +1,17 @@
+<% content_for :title, t('Loans') %>
+<% content_for :navbar_link, 'loans'%>
+
+
+
+<div class="page-title">
+  <h1><%= t('Loans') %></h1>
+</div>
+
+<div class="row col-md-11">
+	<table>
+		<tr><th><%= t('Title')%></th><th><%= t('User')%></th><th><%= t('Action')%></th>
+	  <% Loan.where(returned: false).paginate(:page => params[:page]).each do |loan| %> 
+	  	<%= render partial: 'loans/line', locals: {loan: loan} %>
+		<% end %>
+	</table>
+</div>
