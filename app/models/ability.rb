@@ -31,7 +31,7 @@ class Ability
 
       ## MODEL : ITEM
       can :manage, Item
-
+      can :manage, Loan
     end
 
 
