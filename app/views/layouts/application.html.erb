@@ -31,12 +31,27 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse navbar-ex1-collapse">
 
-      <ul class="nav navbar-nav navbar-right">
+      <ul class="nav navbar-nav navbar-left">
         <%= yield :user_navigation %>
       </ul>
 
+
+      <ul class="nav navbar-nav navbar-right">>
+        <li>
+          <%= form_tag search_comics_url, method: :get do %>
+              <p>
+                <%= text_field_tag :query, params[:query], :class => 'search' %>
+                <%= submit_tag 'Search', name: nil, :class => 'button' %>
+              </p>
+          <% end %>
+        </li>
+      </ul>
+
     </div>
+
+
   </div>
+
 </nav>
 
 <!-- Main content -->
@@ -61,6 +76,7 @@
       </div>
     </div>
   </div>
+
 
   <div class="container">
     <div class="row">
