@@ -11,4 +11,9 @@
 class Collection < ActiveRecord::Base
 
   has_many :items
+
+  public
+  def comics
+    self.items.where(type:'Comic')
+  end
 end
