@@ -28,6 +28,23 @@ class ComicsController < ApplicationController
   end
 
   def index
+    if params[:sort_by]
+      case params[:sort_by]
+        when 'titles'
+          @comics = Comic.all.order(:title)
+          render 'index'
+
+        when 'authors'
+          @authors = Author.all.order(:name)
+          render 'index_sorted_by_author'
+        when 'collections'
+          @collections = Collection.all.order(:title)
+          render 'index_sorted_by_collection'
+        else
+          @comics = Comic.all.order(:title)
+          render 'index'
+      end
+    end
   end
 
   ## UPDATE
