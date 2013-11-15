@@ -30,7 +30,7 @@ class ApplicationController < ActionController::Base
     if user.role and user.role.name == 'admin' 
       loans_path
     else
-      comics_path
+      root_path
     end
   end
 end

@@ -22,9 +22,13 @@
       </p>
 
       <% if can? :create, Loan %>
-          <div class="pull-right">
+        <div class="pull-right">
+          <% if comic.available %>
             <%= link_to 'New Loan', new_loan_path(:item => comic), :class => 'btn btn-success'%>
-          </div>
+          <% else %>
+            <%= link_to 'Return', update_loan_path(:item => comic), :class => 'btn btn-success'%>
+          <% end %>
+        </div>
       <% end %>
 
     </div>
