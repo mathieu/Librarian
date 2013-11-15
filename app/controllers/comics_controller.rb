@@ -36,10 +36,10 @@ class ComicsController < ApplicationController
 
         when 'authors'
           @authors = Author.all.order(:name)
-          render 'index_sorted_by_author'
+          render 'index_sorted_by_authors'
         when 'collections'
           @collections = Collection.all.order(:title)
-          render 'index_sorted_by_collection'
+          render 'index_sorted_by_collections'
         else
           @comics = Comic.all.order(:title)
           render 'index'
