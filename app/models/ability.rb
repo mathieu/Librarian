@@ -13,6 +13,8 @@ class Ability
 
     ## MODEL : ITEM
     can :read, Item
+    can :search, Item
+
 
 
 
