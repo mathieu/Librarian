@@ -17,5 +17,7 @@
 
 </div>
 
+<%= render partial: 'index_nav', locals: {active_link: 'titles'} %>
+
 <%= render partial: "comics/#{params[:display]?params[:display]:'grid'}", locals: {comics: Comic.all.paginate(:page => params[:page])} %>
 
