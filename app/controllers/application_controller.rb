@@ -25,4 +25,12 @@ class ApplicationController < ActionController::Base
       'guest_user'
     end
   end
+
+  def after_sign_in_path_for(user)
+    if user.role and user.role.name == 'admin' 
+      loans_path
+    else
+      comics_path
+    end
+  end
 end
