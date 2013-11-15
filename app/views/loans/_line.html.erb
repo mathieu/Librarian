@@ -3,7 +3,10 @@
   <td><%= loan.user.email %></td>
   <td> 
     <% if !loan.returned? %>
-      <button type="button" class="btn btn-primary">Return</button>
+    	<%= form_for loan do |f|%>
+
+        <%= f.submit 'Return', :class => 'btn btn-primary' %>
+      <% end %>
     <% end %>
   </td>
 </tr>
