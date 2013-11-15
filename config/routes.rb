@@ -1,5 +1,7 @@
 Librarian::Application.routes.draw do
 
+  get "loans/show"
+  get "loans/index"
   # Devise
   devise_for :users
 

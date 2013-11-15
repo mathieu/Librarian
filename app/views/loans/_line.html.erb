@@ -1,0 +1,9 @@
+<tr>
+  <td><%= loan.item.title %></td>
+  <td><%= loan.user.email %></td>
+  <td> 
+    <% if !loan.returned? %>
+      <button type="button" class="btn btn-primary">Return</button>
+    <% end %>
+  </td>
+</tr>
