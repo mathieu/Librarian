@@ -3,7 +3,24 @@ en:
   search: Search
   NewComic: New Comic
   Comics: Comics
+  Comic: Comic
 
+
+  comics:
+    form:
+      authors_help: "Type the authors' name separated by ','"
+    edit:
+      title: "Edit '%{message}'"
+    search:
+      page_title: "Search '%{query}'"
+      title: "Your search '%{query}'"
+      no_result: No comic found
+    index:
+      title: "All Comics"
+    index_sorted_by_authors:
+      title: "The comics by authors"
+    index_sorted_by_collections:
+      title: "The comics by collections"
 
   activerecord:
     models:

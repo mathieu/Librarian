@@ -5,7 +5,7 @@
 <div class="page-header">
   <div class="pull-right">
     <% if can? :edit, @comic %>
-        <%= link_to 'Edit', edit_comic_path(@comic), :class => 'btn btn-success' %>
+        <%= link_to t('helpers.submit.update', model: t('Comic')), edit_comic_path(@comic), :class => 'btn btn-success' %>
     <% end %>
   </div>
 
