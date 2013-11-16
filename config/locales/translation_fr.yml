@@ -42,6 +42,12 @@ fr:
     index_sorted_by_collections:
       title: "Les BDs par collections"
 
+  loans:
+    new:
+      page_tite: "Prêter un(e) %{model}"
+      title: "Prêter '%{item}'"
+      fomule: "Prêter '%{item}' à "
+
 
 
   activerecord:
