@@ -27,6 +27,9 @@ class User < ActiveRecord::Base
 
   has_many :loans
 
+  # Define some scopes
+  scope :registered, -> {where(role: Role.find_by_name('registered'))}
+
   # Assign a default role before creation
   before_create :set_default_role
 

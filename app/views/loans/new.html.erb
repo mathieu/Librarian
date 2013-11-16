@@ -13,7 +13,7 @@
 
     <div class="form-group">
       <label class="sr-only" for="user">User</label>
-      <%=collection_select(:loan, :user_id, User.all, :id, :email, {}, {:class=>'form-control', :id => 'user'})%>
+      <%=collection_select(:loan, :user_id, User.registered, :id, :email, {}, {:class=>'form-control', :id => 'user'})%>
     </div>
     <%= link_to 'Annuler', root_path, :class => 'btn btn-default' %>
     <%= f.submit nil, :class => 'btn btn-primary' %>
