@@ -20,7 +20,11 @@ class ApplicationController < ActionController::Base
   def define_layout
     # Display different depending on the user (connected or not)
     if user_signed_in?
-      'registered_user'
+      if current_user.is_admin
+        'admin_user'
+      else
+        'registered_user'
+      end
     else
       'guest_user'
     end
