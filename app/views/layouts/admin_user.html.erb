@@ -1,6 +1,8 @@
 <!-- Display a dropdown menu with some basic 'edit' and 'logout' links -->
 <% content_for :navigation do %>
-    <li><%= link_to t('Loans'), loans_path %></li>
+    <li class="<%= content_for(:navbar_link) == 'loans' ? 'active' : ''%>">
+      <%= link_to t('Loans'), loans_path %>
+    </li>
 <% end %>
 
 
