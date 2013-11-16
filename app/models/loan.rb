@@ -13,4 +13,8 @@
 class Loan < ActiveRecord::Base
   belongs_to :user
   belongs_to :item
+
+  # define some scopes
+  scope :pending, -> {where(returned: false)}
+  scope :finished, -> {where(returned: true)}
 end

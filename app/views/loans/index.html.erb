@@ -17,7 +17,7 @@
         </tr>
       </thead>
 
-	  <% Loan.where(returned: false).paginate(:page => params[:page]).each do |loan| %> 
+	  <% Loan.pending.paginate(:page => params[:page]).each do |loan| %>
 	  	<%= render partial: 'loans/line', locals: {loan: loan} %>
 		<% end %>
 	</table>
