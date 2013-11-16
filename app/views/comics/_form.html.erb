@@ -11,10 +11,18 @@
 
 <%= form_for @comic, :html => {:multipart => true, :class => 'form-horizontal' } do |f| %>
 
+    <!-- isbn -->
+    <div class="form-group">
+      <%= f.label :isbn, :class => 'col-md-2 control-label' %>
+      <div class="col-md-5">
+        <%= f.text_field :isbn, :class => 'form-control' %>
+      </div>
+    </div>
+
     <!-- title -->
     <div class="form-group">
       <%= f.label :title, :class => 'col-md-2 control-label' %>
-      <div class="col-md-10">
+      <div class="col-md-5">
         <%= f.text_field :title, :class => 'form-control' %>
       </div>
     </div>
@@ -22,23 +30,18 @@
     <!-- authors -->
     <div class="form-group" data-no-turbolink>
       <%= f.label :authors, :class => 'col-md-2 control-label' %>
-      <div class="col-md-10" data-no-turbolink>
+      <div class="col-md-7" data-no-turbolink>
         <%= f.text_field :author_names, :class => 'form-control with_autocomplete', 'data-autocompleteUrl' => autocomplete_author_name_comics_path %>
-      </div>
-    </div>
-
-    <!-- isbn -->
-    <div class="form-group">
-      <%= f.label :isbn, :class => 'col-md-2 control-label' %>
-      <div class="col-md-10">
-        <%= f.text_field :isbn, :class => 'form-control' %>
+        <span class="help-block">
+          Type the authors' name separated by ','
+        </span>
       </div>
     </div>
 
     <!-- cover -->
     <div class="form-group">
       <%= f.label :cover, :class => 'col-md-2 control-label' %>
-      <div class="col-md-10">
+      <div class="col-md-7">
         <div class="thumbnail">
           <%= f.hidden_field :cover_cache %>
           <%= image_tag (@comic.cover.medium.url), :class => 'img-thumbnail' if @comic.cover? %>
