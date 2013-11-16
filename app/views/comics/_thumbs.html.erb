@@ -21,15 +21,16 @@
         <%= display_authors(comic.authors) %>
       </p>
 
-      <% if can? :create, Loan %>
+
         <div class="pull-right">
-          <% if comic.available %>
+          <% if can? :lend, comic %>
             <%= link_to t('NewLoan'), new_loan_path(:item => comic), :class => 'btn btn-success'%>
-          <% else %>
+          <% end %>
+          <% if can? :return, comic %>
             <%= link_to t('Return'),loan_path(comic.loans.where(returned: false).first!), :class => 'btn btn-success', :method => :put%>
           <% end %>
         </div>
-      <% end %>
+
 
     </div>
   </div>

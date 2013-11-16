@@ -6,6 +6,9 @@ class Ability
     # Create a guest user if any (not logged in)
     user ||= User.new
 
+    # Create some aliases
+    alias_action :create, :read, :update, :destroy, :to => :crud
+
 
     ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~##
     ##                Rights for ALL                  ##
@@ -40,10 +43,19 @@ class Ability
     if user.is_admin
 
       ## MODEL : ITEM
-      can :manage, Item
+      can :crud, Item
 
       ## MODEL : LOAN
-      can :manage, Loan
+      can :crud, Loan
+
+      ## Comic
+      can :lend, Comic do |comic|
+        comic.available
+      end
+
+      can :return, Comic do |comic|
+        !comic.available
+      end
     end
 
 
