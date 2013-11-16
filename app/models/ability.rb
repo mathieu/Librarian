@@ -47,6 +47,9 @@ class Ability
 
       ## MODEL : LOAN
       can :crud, Loan
+      can :return, Loan do |loan|
+        !loan.returned
+      end
 
       ## Comic
       can :lend, Comic do |comic|
