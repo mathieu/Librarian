@@ -26,6 +26,11 @@ fr:
   password: Mot de passe
   search: Chercher
 
+  will_paginate:
+    next_label: Suivant
+    page_gap: ...
+    previous_label: Précédent
+    
   comics:
     form:
       authors_help: "Saisissez le nom des auteurs en les séparants par des ','"
