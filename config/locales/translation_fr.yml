@@ -25,6 +25,11 @@ fr:
   password: Mot de passe
   search: Chercher
 
+  will_paginate:
+    next_label: Suivant
+    page_gap: ...
+    previous_label: Précédent
+    
   activerecord:
     models:
       author: auteur
