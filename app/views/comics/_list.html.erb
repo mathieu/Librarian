@@ -1,7 +1,21 @@
-<% comics.each do |comic| %>
+<%
+
+   nb_column = 2
+
+   if comics.size < nb_column
+     nb_column=comics.size
+   end
+
+%>
+
+<% comics.each_slice(nb_column).to_a.each do |comics| %>
     <div class="row">
-        <%= render partial: 'comics/line', locals: {comic: comic} %>
+
+      <% comics.each do |comic| %>
+          <div class="col-md-6">
+        		<%= render partial: 'comics/line', locals: {comic: comic} %>
+          </div>
+      <% end %>
+
     </div>
 <% end %>
-
-<%= will_paginate comics %>

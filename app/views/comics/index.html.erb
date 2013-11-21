@@ -7,5 +7,11 @@
 
 <%= render partial: 'index_nav', locals: {active_link: 'titles'} %>
 
-<%= render partial: "comics/#{params[:display]?params[:display]:'grid'}", locals: {comics: Comic.all.paginate(:page => params[:page]), paginate:true} %>
 
+
+<% @comics = Comic.paginate(:page => params[:page], :order => :title, :per_page => 3*4) %>
+
+<%= render partial: "comics/#{params[:display]?params[:display]:'grid'}", locals: {comics: @comics} %>
+
+
+<%= will_paginate @comics %>
