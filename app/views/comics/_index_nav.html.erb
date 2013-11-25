@@ -1,12 +1,12 @@
 <!-- Navigation -->
 <ul class="nav nav-tabs nav-justified">
   <li class="<%= active_link == 'titles' ? 'active' : '' %>">
-  	<%= link_to t('Titles'), comics_path(params.merge(:sort_by => 'titles').except(:tag)) %>
+  	<%= link_to t('Titles'), comics_path(params.merge(:sort_by => 'titles').except(:tag).except(:page)) %>
   </li>
   <li class="<%= active_link == 'authors' ? 'active' : '' %>">
-  	<%= link_to t('Authors'), comics_path(params.merge(:sort_by => 'authors').except(:tag)) %>
+  	<%= link_to t('Authors'), comics_path(params.merge(:sort_by => 'authors').except(:tag).except(:page)) %>
   </li>
   <li class="<%= active_link == 'collections' ? 'active' : '' %>">
-  	<%= link_to t('Collections'), comics_path(params.merge(:sort_by => 'collections').except(:tag)) %>
+  	<%= link_to t('Collections'), comics_path(params.merge(:sort_by => 'collections').except(:tag).except(:page)) %>
   </li>
 </ul>
