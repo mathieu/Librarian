@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131125112823) do
+ActiveRecord::Schema.define(version: 20131125144514) do
 
   create_table "authors", force: true do |t|
     t.string   "name"
@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(version: 20131125112823) do
     t.string   "cover"
     t.string   "author_names"
     t.string   "type"
+    t.string   "editor"
   end
 
   add_index "items", ["collection_id"], name: "index_items_on_collection_id"

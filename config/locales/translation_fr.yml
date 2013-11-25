@@ -33,6 +33,7 @@ fr:
 
   tag_list_edit: Tags (séparés par des virgules)
 
+  Editor: Éditeur
   comics:
     form:
       authors_help: "Saisissez le nom des auteurs en les séparants par des ','"

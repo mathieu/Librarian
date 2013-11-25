@@ -4,10 +4,10 @@
     <div class="<%= comic.available ? 'panel-body' : 'panel-body unavailable' %>">
 
       <% if comic.cover? %>
-          <%= image_tag (comic.cover.small.url), :class => 'img-rounded'%>
+          <%= link_to image_tag(comic.cover.small.url), comic_path(comic), :class => 'img-rounded'%>
       <% else %>
           <div class="no-picture no-picture-small">
-            <span class="glyphicon glyphicon-question-sign"></span>
+            <%= link_to comic.title, comic_path(comic), :class =>'glyphicon glyphicon-question-sign'%>
           </div>
       <% end %>
 
@@ -19,6 +19,8 @@
       <!-- Authors -->
       <p>
         <%= display_authors(comic.authors) %>
+      <!-- Editor -->
+        <br/><em><%= comic.editor %></em>
       </p>
 
       <!-- Tags -->

@@ -38,6 +38,14 @@
       <dt>ISBN : </dt>
       <dd><%= @comic.isbn%></dd>
 
+      <dt><%= t :Editor %> : </dt>
+      <dd><%= @comic.editor%></dd>
+
+      <% if @comic.collection %>
+        <dt><%= t :Collection %> : </dt>
+        <dd><%= @comic.collection.title%></dd>
+      <% end %>
+
       <dt><%= t :Registered %> : </dt>
       <dd><%= @comic.registered%></dd>
 
