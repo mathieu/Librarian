@@ -9,7 +9,7 @@
 
 
 
-<% @comics = Comic.paginate(:page => params[:page], :order => :title, :per_page => 3*4) %>
+<% @comics = @comics.paginate(:page => params[:page], :order => :title, :per_page => 3*4) %>
 
 <%= render partial: "comics/#{params[:display]?params[:display]:'grid'}", locals: {comics: @comics} %>
 

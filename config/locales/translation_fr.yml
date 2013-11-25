@@ -30,7 +30,9 @@ fr:
     next_label: Suivant
     page_gap: ...
     previous_label: Précédent
-    
+
+  tag_list_edit: Tags (séparés par des virgules)
+
   comics:
     form:
       authors_help: "Saisissez le nom des auteurs en les séparants par des ','"

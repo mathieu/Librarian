@@ -28,20 +28,27 @@ class ComicsController < ApplicationController
   end
 
   def index
+
+    if params[:tag]
+      @comics = Comic.tagged_with(params[:tag])
+    else
+      @comics = Comic.all
+    end
+
     if params[:sort_by]
       case params[:sort_by]
         when 'titles'
-          @comics = Comic.all.order(:title)
+          @comics = @comics.order(:title)
           render 'index'
 
         when 'authors'
-          @authors = Author.all.order(:name)
+          @authors = @comics.order(:name)
           render 'index_sorted_by_authors'
         when 'collections'
           @collections = Collection.all.order(:title)
           render 'index_sorted_by_collections'
         else
-          @comics = Comic.all.order(:title)
+          @comics = @comics.order(:title)
           render 'index'
       end
     end
@@ -118,7 +125,7 @@ class ComicsController < ApplicationController
   ## Strong parameters
   ############################
   def comic_params
-    params.require(:comic).permit(:title, :author_names, :isbn, :cover, :cover_cache, :available  )
+    params.require(:comic).permit(:title, :author_names, :isbn, :cover, :cover_cache, :available, :tag_list  )
   end
 
 end

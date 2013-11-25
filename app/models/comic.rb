@@ -12,6 +12,7 @@
 #  collection_id :integer
 #  cover         :string(255)
 #  author_names  :string(255)
+#  type          :string(255)
 #
 
 class Comic < Item

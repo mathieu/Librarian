@@ -12,6 +12,7 @@
 #  collection_id :integer
 #  cover         :string(255)
 #  author_names  :string(255)
+#  type          :string(255)
 #
 
 class Item < ActiveRecord::Base
@@ -21,6 +22,8 @@ class Item < ActiveRecord::Base
   belongs_to :collection
   has_many :loans
   has_and_belongs_to_many :authors
+
+  acts_as_taggable
 
   # Mounter for cover
   mount_uploader :cover, CoverUploader
