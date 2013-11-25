@@ -66,10 +66,10 @@
 
     <!-- tags -->
     <div class="form-group">
-      <%= f.label :tag_list, t("tag_list_edit", :default =>"Tags (separated by commas)") ,  :class => 'col-md-2 control-label' %>
+      <%= f.label :tag_list, t("tags", :default =>"Tags") ,  :class => 'col-md-2 control-label' %>
 
       <div class="col-md-10">
-        <%= f.text_field :tag_list, :class => 'form-control' %>
+        <%= f.text_field :tag_list, :class => 'form-control',:placeholder => t("tag_list_edit", :default =>"Tags (separated by commas)") %>
       </div>
     </div>
 

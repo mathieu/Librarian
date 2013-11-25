@@ -6,14 +6,8 @@
         </div>
     <% end %>
     <%= t('Comics') %>
-    <%= link_to '', comics_path(:display => 'list'), :class => 'btn glyphicon glyphicon-list' %>
-    <%= link_to '', comics_path(:display => 'grid'), :class => 'btn glyphicon glyphicon-th' %>
+    <%= link_to '', url_for(params.merge(:display => 'list')), :class => 'btn glyphicon glyphicon-list' %>
+    <%= link_to '', url_for(params.merge(:display => 'grid')), :class => 'btn glyphicon glyphicon-th' %>
   </h1>
 
-</div>
-
-<div id="tag_cloud">
-  <% tag_cloud Comic.tag_counts, %w[s m l] do |tag, css_class| %>
-    <%= link_to tag.name, tag_path(tag.name), class: css_class %>
-  <% end %>
 </div>

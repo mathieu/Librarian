@@ -4,10 +4,13 @@
 
 <%= render partial: 'index_header' %>
 
-
 <%= render partial: 'index_nav', locals: {active_link: 'titles'} %>
 
-
+<div class='panel-body'>
+  <% tag_cloud Comic.tag_counts, %w[btn-xs btn-sm btn] do |tag, css_class| %>
+    <%= link_to tag.name, tag_path(tag.name), class: 'btn ' + ( params[:tag] == tag.name ? 'btn-primary ' : 'btn-default ') + css_class %>
+  <% end %>
+</div>
 
 <% @comics = @comics.paginate(:page => params[:page], :order => :title, :per_page => 3*4) %>
 
