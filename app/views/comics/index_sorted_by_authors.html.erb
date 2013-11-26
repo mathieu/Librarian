@@ -8,6 +8,7 @@
 
 <%= render partial: 'index_nav', locals: {active_link: 'authors'} %>
 
+<% @authors = Author.paginate(:page => params[:page], :order => :name, :per_page => 5) %>
 <% @authors.each do |author| %>
     <% if author.comics.count > 0 %>
         <div class="panel panel-default">
@@ -15,11 +16,12 @@
             <h5><%= author.name %></h5>
           </div>
           <div class="panel-body">
-            <%= render partial: "comics/#{params[:display]?params[:display]:'grid'}", locals: {comics: author.comics.paginate(:page => params[:page]), paginate:true} %>
+            <%= render partial: "comics/#{params[:display]?params[:display]:'grid'}", locals: {comics: author.comics} %>
           </div>
         </div>
     <% end %>
 <% end %>
 
+<%= will_paginate @authors %>
 
 

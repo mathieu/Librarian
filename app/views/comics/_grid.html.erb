@@ -1,12 +1,15 @@
 
 <%
 
-   nb_column = 4
+  nb_column = 4
 
-   if comics.size < nb_column
-     nb_column=comics.size
-   end
+  if comics.size < nb_column
+    nb_column=comics.size
+  end
 
+  if nb_column == 0
+    nb_column = 1
+  end
 %>
 
 <% comics.each_slice(nb_column).to_a.each do |comics| %>
@@ -20,5 +23,3 @@
 
     </div>
 <% end %>
-
-<%= will_paginate comics if paginate %>
