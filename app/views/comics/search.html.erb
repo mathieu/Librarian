@@ -1,16 +1,16 @@
-<% content_for :title, 'All comics' %>
+<% content_for :title, t('.page_title', query: params[:query])  %>
 <% content_for :navbar_link, 'comics'%>
 
 
 <div class="page-header">
   <h1>
-    Your search '<%= params[:query] %>'
+    <%= t('.title', query: params[:query]) %>
   </h1>
 </div>
 
 
 <% if @result.results.size == 0 %>
-    No comic found
+    <%= t '.no_result'%>
 <% else %>
     <%= render partial: 'comics/grid', as: :comic, locals: {comics: @result.results, paginate: false} %>
 <% end %>

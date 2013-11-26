@@ -2,10 +2,9 @@
   <td><%= loan.item.title %></td>
   <td><%= loan.user.email %></td>
   <td> 
-    <% if !loan.returned? %>
+    <% if can? :return, loan %>
     	<%= form_for loan do |f|%>
-
-        <%= f.submit 'Return', :class => 'btn btn-primary' %>
+        <%= f.submit t('Return'), :class => 'btn btn-primary' %>
       <% end %>
     <% end %>
   </td>

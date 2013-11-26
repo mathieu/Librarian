@@ -1,9 +1,9 @@
-<% content_for :title, 'Add new comic' %>
+<% content_for :title, t('helpers.submit.create', model: t('Comic')) %>
 <% content_for :navbar_link, 'comics'%>
 
 
 <div class="page-header">
-  <h1>Add a new comic</h1>
+  <h1><%= t('helpers.submit.create', model: t('Comic')) %></h1>
 </div>
 
 <%= render :partial => 'form' %>

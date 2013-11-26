@@ -31,11 +31,11 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse navbar-ex1-collapse">
 
-      <% if current_user and current_user.role.name == 'admin' %>
-        <ul class="nav navbar-nav">
-          <li><%= link_to t('Loans'), loans_path %></li>
-        </ul>
-      <% end %>
+
+      <ul class="nav navbar-nav">
+        <%= yield :navigation %>
+      </ul>
+
       <ul class="nav navbar-nav navbar-left">
         <%= yield :user_navigation %>
       </ul>
@@ -91,7 +91,7 @@
 <div id="footer">
   <div class="container">
     <hr/>
-    <p><a href="http://github.com/mathieu/Librarian">Librarian</a> v0.2 &copy; 2013</p>
+    <p><a href="http://github.com/mathieu/Librarian">Librarian</a> v0.3 &copy; 2013</p>
   </div>
 </div>
 

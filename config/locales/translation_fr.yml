@@ -12,6 +12,7 @@ fr:
   NewComic: Nouvelle BD
 
   Comics: BDs
+  Comic: BD
 
   NewLoan: Nouvel emprunt
   Return: Retour
@@ -29,7 +30,34 @@ fr:
     next_label: Suivant
     page_gap: ...
     previous_label: Précédent
-    
+
+  tag_list_edit: Tags (séparés par des virgules)
+
+  Editor: Éditeur
+  comics:
+    form:
+      authors_help: "Saisissez le nom des auteurs en les séparants par des ','"
+    edit:
+      title: "Modifier '%{message}'"
+    search:
+      page_title: "Recherche '%{query}'"
+      title: "Résulat(s) correspondant à '%{query}'"
+      no_result: Aucune BD trouvée
+    index:
+      title: "Toutes les BDs"
+    index_sorted_by_authors:
+      title: "Les BDs par auteurs"
+    index_sorted_by_collections:
+      title: "Les BDs par collections"
+
+  loans:
+    new:
+      page_tite: "Prêter un(e) %{model}"
+      title: "Prêter '%{item}'"
+      fomule: "Prêter '%{item}' à "
+
+
+
   activerecord:
     models:
       author: auteur

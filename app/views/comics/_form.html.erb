@@ -11,10 +11,18 @@
 
 <%= form_for @comic, :html => {:multipart => true, :class => 'form-horizontal' } do |f| %>
 
+    <!-- isbn -->
+    <div class="form-group">
+      <%= f.label :isbn, :class => 'col-md-2 control-label' %>
+      <div class="col-md-5">
+        <%= f.text_field :isbn, :class => 'form-control' %>
+      </div>
+    </div>
+
     <!-- title -->
     <div class="form-group">
       <%= f.label :title, :class => 'col-md-2 control-label' %>
-      <div class="col-md-10">
+      <div class="col-md-5">
         <%= f.text_field :title, :class => 'form-control' %>
       </div>
     </div>
@@ -22,23 +30,26 @@
     <!-- authors -->
     <div class="form-group" data-no-turbolink>
       <%= f.label :authors, :class => 'col-md-2 control-label' %>
-      <div class="col-md-10" data-no-turbolink>
+      <div class="col-md-7" data-no-turbolink>
         <%= f.text_field :author_names, :class => 'form-control with_autocomplete', 'data-autocompleteUrl' => autocomplete_author_name_comics_path %>
+        <span class="help-block">
+          <%= t '.authors_help' %>
+        </span>
       </div>
     </div>
 
-    <!-- isbn -->
+    <!-- Editor -->
     <div class="form-group">
-      <%= f.label :isbn, :class => 'col-md-2 control-label' %>
+      <%= f.label :Editor, :class => 'col-md-2 control-label' %>
       <div class="col-md-10">
-        <%= f.text_field :isbn, :class => 'form-control' %>
+        <%= f.text_field :editor, :class => 'form-control' %>
       </div>
     </div>
 
     <!-- cover -->
     <div class="form-group">
       <%= f.label :cover, :class => 'col-md-2 control-label' %>
-      <div class="col-md-10">
+      <div class="col-md-7">
         <div class="thumbnail">
           <%= f.hidden_field :cover_cache %>
           <%= image_tag (@comic.cover.medium.url), :class => 'img-thumbnail' if @comic.cover? %>
@@ -61,10 +72,22 @@
 
     </div>
 
+    <!-- tags -->
+    <div class="form-group">
+      <%= f.label :tag_list, t("tags", :default =>"Tags") ,  :class => 'col-md-2 control-label' %>
+
+      <div class="col-md-10">
+        <%= f.text_field :tag_list, :class => 'form-control',:placeholder => t("tag_list_edit", :default =>"Tags (separated by commas)") %>
+      </div>
+    </div>
+
     <div class="form-group">
       <div class="col-md-offset-2 col-md-10">
         <%= link_to 'Annuler', root_path, :class => 'btn btn-default' %>
         <%= f.submit nil, :class => 'btn btn-primary' %>
       </div>
     </div>
+
+
+
 <% end %>
