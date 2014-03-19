@@ -4,10 +4,10 @@ source 'https://rubygems.org'
 ## Ruby / Rails
 ############################################################################################
 # Specify Ruby version (useful for heroku)
-ruby '2.0.0'
+ruby '2.1.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 4.0.0'
+gem 'rails', '~> 4.0.2'
 
 
 
