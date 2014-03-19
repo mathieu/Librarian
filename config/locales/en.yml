@@ -211,3 +211,4 @@ en:
       <<: *errors
 
   search: Search
+  title: Title

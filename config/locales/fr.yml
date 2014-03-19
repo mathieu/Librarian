@@ -218,3 +218,4 @@ fr:
       <<: *errors
 
   search: Chercher
+  title: Titre
